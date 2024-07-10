@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloned BGXDB</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Optimized UX/UI</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to BGXDB Clone</h1>
-    <p>This is a simple clone of the BGXDB website.</p>
     <div class="background-blur"></div>
     <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>Copy your account information below:</p>
         <div class="account-info">
-            <h2>Account Information</h2>
-            <p>Username: <input type="text" id="username" value="your_username" readonly onclick="copyText('username')"></p>
-            <p>Password: <input type="text" id="password" value="your_password" readonly onclick="copyText('password')"></p>
+            <h2>Account Info</h2>
+            <p>Username:</p>
+            <input type="text" id="username" value="yourUsername" readonly>
+            <button onclick="copyText('username')">Copy Username</button>
+            <p>Password:</p>
+            <input type="text" id="password" value="yourPassword" readonly>
+            <button onclick="copyText('password')">Copy Password</button>
         </div>
     </div>
+    <div id="notification" class="notification"></div>
     <script src="script.js"></script>
 </body>
 </html>
