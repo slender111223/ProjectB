@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -12,10 +13,8 @@ body, html {
     color: white;
 }
 
-
-
-
-h1, p {
+h1,
+p {
     margin: 10px;
     z-index: 2;
 }
@@ -29,6 +28,7 @@ h1, p {
     filter: blur(15px);
     z-index: -1;
 }
+
 .content {
     z-index: 1;
     text-align: center;
@@ -36,17 +36,20 @@ h1, p {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     border: white solid 1px;
+    position: absolute;
+    visibility: hidden;
     opacity: 0;
-    transition: opacity 0.5s ease;
-    display: none;
+
+    transition: visibility 0s linear 0.33s, opacity 0.33s linear;
 }
 
 
 .content.show {
+    visibility: visible;
     opacity: 1;
-    display: block;
-}
 
+    transition-delay: 0s;
+}
 
 .account-info {
     margin-top: 20px;
@@ -114,8 +117,8 @@ button {
 html {
 
     box-sizing: border-box;
-    --bgColorMenu : #ffffff;
-    --duration: .7s;    
+    --bgColorMenu: #ffffff;
+    --duration: .7s;
 
 }
 
@@ -127,8 +130,8 @@ html *::after {
 
 }
 
-body{
-    
+body {
+
     margin: 0;
     display: flex;
     height: 100vh;
@@ -141,7 +144,7 @@ body{
 
 }
 
-.nav{
+.nav {
     position: fixed;
     top: 0;
     width: 100%;
@@ -150,10 +153,11 @@ body{
     align-items: center;
     justify-content: center;
     display: flex;
-    z-index: 1000; /* Ensure it stays on top */
+    z-index: 1000;
+    /* Ensure it stays on top */
 }
 
-.menu{
+.menu {
 
     margin: 50px;
     display: flex;
@@ -167,8 +171,8 @@ body{
     background-color: var(--bgColorMenu);
 }
 
-.menu__item{
-    
+.menu__item {
+
     all: unset;
     flex-grow: 1;
     z-index: 100;
@@ -180,12 +184,12 @@ body{
     will-change: transform;
     justify-content: center;
     padding: 0.55em 0 0.85em;
-    transition: transform var(--timeOut , var(--duration));
-    
+    transition: transform var(--timeOut, var(--duration));
+
 }
 
-.menu__item::before{
-    
+.menu__item::before {
+
     content: "";
     z-index: -1;
     width: 4.2em;
@@ -194,25 +198,25 @@ body{
     position: absolute;
     transform: scale(0);
     transition: background-color var(--duration), transform var(--duration);
-    
+
 }
 
 
 .menu__item.active {
 
-    transform: translate3d(0, -.8em , 0);
+    transform: translate3d(0, -.8em, 0);
 
 }
 
-.menu__item.active::before{
-    
+.menu__item.active::before {
+
     transform: scale(1);
     background-color: var(--bgColorItem);
 
 }
 
-.icon{
-    
+.icon {
+
     width: 2.6em;
     height: 2.6em;
     stroke: rgb(0, 0, 0);
@@ -222,13 +226,13 @@ body{
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-dasharray: 400;
-    
+
 }
 
 .menu__item.active .icon {
 
     animation: strok 1.5s reverse;
-    
+
 }
 
 @keyframes strok {
@@ -241,7 +245,7 @@ body{
 
 }
 
-.menu__border{
+.menu__border {
 
     left: 0;
     bottom: 99%;
@@ -251,8 +255,8 @@ body{
     clip-path: url(#menu);
     will-change: transform;
     background-color: var(--bgColorMenu);
-    transition: transform var(--timeOut , var(--duration));
-    
+    transition: transform var(--timeOut, var(--duration));
+
 }
 
 .svg-container {
@@ -263,8 +267,7 @@ body{
 
 
 @media screen and (max-width: 50em) {
-    .menu{
+    .menu {
         font-size: .8em;
     }
 }
-

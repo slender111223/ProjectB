@@ -22,7 +22,7 @@ function showNotification(message) {
 // Original image:
 // https://dribbble.com/shots/5619509-Animated-Tab-Bar
 
-"use strict"; 
+"use strict";
 
 const body = document.body;
 const bgColorsBody = ["#ffb457", "#ff96bd", "#9999fb", "#ffe797", "#cffff1"];
@@ -34,26 +34,26 @@ let activeItem = menu.querySelector(".active");
 function clickItem(item, index) {
 
     menu.style.removeProperty("--timeOut");
-    
+
     if (activeItem == item) return;
-    
+
     if (activeItem) {
         activeItem.classList.remove("active");
     }
 
-    
+
     item.classList.add("active");
     body.style.backgroundColor = bgColorsBody[index];
     activeItem = item;
     offsetMenuBorder(activeItem, menuBorder);
-    
-    
+
+
 }
 
 function offsetMenuBorder(element, menuBorder) {
 
     const offsetActiveItem = element.getBoundingClientRect();
-    const left = Math.floor(offsetActiveItem.left - menu.offsetLeft - (menuBorder.offsetWidth  - offsetActiveItem.width) / 2) +  "px";
+    const left = Math.floor(offsetActiveItem.left - menu.offsetLeft - (menuBorder.offsetWidth - offsetActiveItem.width) / 2) + "px";
     menuBorder.style.transform = `translate3d(${left}, 0 , 0)`;
 
 }
@@ -63,7 +63,7 @@ offsetMenuBorder(activeItem, menuBorder);
 menuItems.forEach((item, index) => {
 
     item.addEventListener("click", () => clickItem(item, index));
-    
+
 })
 
 window.addEventListener("resize", () => {
@@ -71,13 +71,10 @@ window.addEventListener("resize", () => {
     menu.style.setProperty("--timeOut", "none");
 });
 
-// Lắng nghe sự kiện khi tất cả các phần tử HTML đã được tải
 document.addEventListener("DOMContentLoaded", function() {
-    // Lấy tất cả các button navigate và các div tương ứng
     var buttons = document.querySelectorAll(".menu__item");
     var divs = document.querySelectorAll(".content");
 
-    // Ẩn tất cả các div, chỉ hiển thị div đầu tiên
     divs.forEach(function(div, index) {
         if (index === 0) {
             div.classList.add('show');
@@ -86,15 +83,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Lặp qua từng button để gắn sự kiện click
     buttons.forEach(function(button, index) {
         button.addEventListener("click", function() {
-            // Ẩn tất cả các div
             divs.forEach(function(div) {
                 div.classList.remove('show');
             });
-
-            // Hiển thị div tương ứng với button được click
             divs[index].classList.add('show');
         });
     });
