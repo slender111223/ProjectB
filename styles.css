@@ -293,3 +293,14 @@ body {
 .button-check:hover {
     background-color: #0056b3;
 }
+
+.banner{
+    position: absolute;
+    top: 190px;
+    font-family: sans-serif;
+    color: red;
+    text-shadow: -1px -1px 0 #fff,
+                  1px -1px 0 #fff, 
+                  1px  1px 0 #fff,    
+                  1px  1px 0 #fff;
+}
