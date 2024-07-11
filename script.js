@@ -71,3 +71,22 @@ window.addEventListener("resize", () => {
     menu.style.setProperty("--timeOut", "none");
 });
 
+// Lắng nghe sự kiện khi tất cả các phần tử HTML đã được tải
+document.addEventListener("DOMContentLoaded", function() {
+    // Lấy tất cả các button navigate và các div tương ứng
+    var buttons = document.querySelectorAll(".menu__item");
+    var divs = document.querySelectorAll(".content");
+
+    // Lặp qua từng button để gắn sự kiện click
+    buttons.forEach(function(button, index) {
+        button.addEventListener("click", function() {
+            // Ẩn tất cả các div
+            divs.forEach(function(div) {
+                div.style.display = "none";
+            });
+
+            // Hiển thị div tương ứng với button được click
+            divs[index].style.display = "block";
+        });
+    });
+});
