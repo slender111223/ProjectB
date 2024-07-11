@@ -39,14 +39,28 @@ getData(thongtinDB.nameCollection);
 function ganThongTin(soLan) {
     document.getElementById("soLanDisplay").textContent = soLan;
     document.getElementById("username").value = "thisisforbgx" + soLan;
-    let textCMD = 'echo Numpad1:: MsgBox You pressed Numpad 1! > "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
-              'echo Numpad2:: MsgBox You pressed Numpad 2! >> "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
-              'echo Numpad3:: MsgBox You pressed Numpad 3! >> "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
-              'echo Numpad4:: MsgBox You pressed Numpad 4! >> "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
-              'echo Numpad5:: MsgBox You pressed Numpad 5! >> "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
-              'start notepad "C:\\Users\\Administrator\\Documents\\hotkeys.txt"';
+    let randomNumberPhone = generateRandomNumber(7);
+    let randomNumberCCCD = generateRandomNumber(6);
+
+    let textCMD = 'echo Numpad1:: Send thisisforbgx'+soLan+'@gmail.com> "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
+              'echo Numpad2:: Send thisisforbgx'+soLan+'>> "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
+              'echo Numpad3:: Send 111223hung>>"C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
+              'echo Numpad4:: Send hung>>"C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
+              'echo Numpad5:: Send thisisforbgx'+soLan+'@gmail.com>>"C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
+              'echo Numpad6:: Send 038'+randomNumberPhone+'>>"C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
+              'echo Numpad7:: Send HN>>"C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
+              'echo Numpad8:: Send 008202'+randomNumberCCCD+'>>"C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
+              'start explorer /select, "C:\\Users\\Administrator\\Documents\\hotkeys.txt"';
     document.getElementById("cmdCopy").value = textCMD
 
+}
+
+function generateRandomNumber(n) {
+    let randomNumber = '';
+    for (let i = 0; i < n; i++) {
+        randomNumber += Math.floor(Math.random() * 10); // Sinh số ngẫu nhiên từ 0 đến 9 và ghép vào chuỗi
+    }
+    return randomNumber;
 }
 
 function showNotification(message) {
