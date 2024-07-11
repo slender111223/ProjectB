@@ -41,7 +41,7 @@ function ganThongTin(soLan) {
     document.getElementById("username").value = "thisisforbgx" + soLan;
     let randomNumberPhone = generateRandomNumber(7);
     let randomNumberCCCD = generateRandomNumber(6);
-
+    
     let textCMD = 'echo Numpad1:: Send thisisforbgx'+soLan+'@gmail.com> "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
               'echo Numpad2:: Send thisisforbgx'+soLan+'>> "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
               'echo Numpad3:: Send 111223hung>>"C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
