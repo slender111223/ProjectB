@@ -77,16 +77,25 @@ document.addEventListener("DOMContentLoaded", function() {
     var buttons = document.querySelectorAll(".menu__item");
     var divs = document.querySelectorAll(".content");
 
+    // Ẩn tất cả các div, chỉ hiển thị div đầu tiên
+    divs.forEach(function(div, index) {
+        if (index === 0) {
+            div.classList.add('show');
+        } else {
+            div.classList.remove('show');
+        }
+    });
+
     // Lặp qua từng button để gắn sự kiện click
     buttons.forEach(function(button, index) {
         button.addEventListener("click", function() {
             // Ẩn tất cả các div
             divs.forEach(function(div) {
-                div.style.display = "none";
+                div.classList.remove('show');
             });
 
             // Hiển thị div tương ứng với button được click
-            divs[index].style.display = "block";
+            divs[index].classList.add('show');
         });
     });
 });
