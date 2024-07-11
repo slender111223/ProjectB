@@ -5,7 +5,9 @@
 
 
 
-
+for(let i =1; i<=5;i++){
+    console.log("Numpad"+i+":: MsgBox You pressed Numpad "+i+"!\n")
+}
 
 
 
