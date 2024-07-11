@@ -105,7 +105,7 @@ button {
 html {
 
     box-sizing: border-box;
-    --bgColorMenu : #1d1d27;
+    --bgColorMenu : #ffffff;
     --duration: .7s;    
 
 }
@@ -134,7 +134,7 @@ body{
 
 .menu{
 
-    margin: 0;
+    margin: 50px;
     display: flex;
     /* Works well with 100% width  */
     width: 32.05em;
@@ -194,7 +194,7 @@ body{
     
     width: 2.6em;
     height: 2.6em;
-    stroke: white;
+    stroke: rgb(0, 0, 0);
     fill: transparent;
     stroke-width: 1pt;
     stroke-miterlimit: 10;
