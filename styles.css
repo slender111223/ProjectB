@@ -169,6 +169,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: var(--bgColorMenu);
+    border-radius: 26px;
 }
 
 .menu__item {
