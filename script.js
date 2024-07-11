@@ -1,3 +1,15 @@
+
+
+
+
+
+
+
+
+
+
+
+
 function copyText(elementId) {
     const inputElement = document.getElementById(elementId);
     inputElement.select();
@@ -10,7 +22,7 @@ function copyText(elementId) {
 }
 
 function showNotification(message) {
-    const notification = document.getElementById('notification');
+    const notification = document.getElementById('notificationCopy');
     notification.textContent = message;
     notification.style.display = 'block';
     setTimeout(() => {

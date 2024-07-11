@@ -77,7 +77,7 @@
         <p>Đăng nhập:</p>
         <div class="account-info">
             <p style="font-weight: bold;">Tên đăng nhập:</p>
-            <input type="text" id="username" value="thisisforbgx8" readonly>
+            <input type="text" id="username" readonly>
             <button onclick="copyText('username')" class="btn-copy">Copy tên đăng nhập</button>
             <p style="font-weight: bold;">Mật khẩu:</p>
             <input type="text" id="password" value="111223hung" readonly>
@@ -88,10 +88,10 @@
     <div class="content" id="createAccount">
         <h1 style="color: rgb(50, 212, 50);" class="no-select">BGX</h1>
         <p>Tạo acc:</p>
-        <p style="font-weight: bold;">Số hiện tại: 8</p>
+        <p style="font-weight: bold;">Số hiện tại: <span id="soLanDisplay"></span></p>
         <div class="button-check-container">
-          <button class="button-check red">Giảm</button>
-          <button class="button-check green">Tăng</button>
+          <button id="giamSo" class="button-check red">Giảm</button>
+          <button id="tangSo" class="button-check green">Tăng</button>
       </div>
       
         <div class="account-info">
@@ -134,7 +134,8 @@
     </div>
 
 
-    <div id="notification" class="notification"></div>
+    <div id="notificationCopy" class="notification"></div>
+    <script type="module" src="firebase.js"></script>
     <script src="script.js"></script>
 </body>
 
