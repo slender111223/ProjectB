@@ -4,14 +4,6 @@
 
 
 
-
-for(let i =1; i<=5;i++){
-    console.log("Numpad"+i+":: MsgBox You pressed Numpad "+i+"!\n")
-}
-
-
-
-
 function copyText(elementId) {
     const inputElement = document.getElementById(elementId);
     inputElement.select();
