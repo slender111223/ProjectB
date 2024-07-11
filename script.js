@@ -15,20 +15,13 @@ function copyText(elementId) {
     inputElement.select();
     inputElement.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(inputElement.value).then(() => {
-        showNotification('Copied to clipboard');
+        showNotification('Đã sao chép vào clipboard');
     }).catch(err => {
-        console.error('Failed to copy: ', err);
+        console.error('Sao chép vào clipboard thất bại: ', err);
     });
 }
 
-function showNotification(message) {
-    const notification = document.getElementById('notificationCopy');
-    notification.textContent = message;
-    notification.style.display = 'block';
-    setTimeout(() => {
-        notification.style.display = 'none';
-    }, 2000);
-}
+
 
 // Designed by:  Mauricio Bucardo
 // Original image:
@@ -104,3 +97,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+function showNotification(message) {
+    const notification = document.getElementById('notificationCopy');
+    notification.textContent = message;
+    notification.style.display = 'block';
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 2000);
+}
