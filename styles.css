@@ -26,7 +26,7 @@ h1, p {
     height: 100%;
     background-image: url('images/1d358e19a9d9368de0f231a4383c07f17d768500-1920x1080.jpg');
     background-size: cover;
-    filter: blur(5px);
+    filter: blur(15px);
     z-index: -1;
 }
 .content {
@@ -130,6 +130,18 @@ body{
     -webkit-tap-highlight-color: transparent;
     transition: background-color var(--duration);
 
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    z-index: 1000; /* Ensure it stays on top */
 }
 
 .menu{
