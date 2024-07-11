@@ -272,3 +272,24 @@ body {
         font-size: .8em;
     }
 }
+
+
+.button-check-container {
+    display: flex; /* Sử dụng flexbox để các button cùng hàng */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+}
+
+.button-check {
+    padding: 10px 20px;
+    margin: 0 5px; /* Khoảng cách giữa các button */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-check:hover {
+    background-color: #0056b3;
+}
