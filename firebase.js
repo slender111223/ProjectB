@@ -23,8 +23,13 @@ let thongtinDB = {
 }
 let soLanHienTai = 0;
 
+
+
+
+
 document.getElementById("tangSo").addEventListener("click", function(){ThayDoiSoLan("Tang");});
 document.getElementById("giamSo").addEventListener("click", function(){ThayDoiSoLan("Giam");});
+document.getElementById("cmdCopyButton").addEventListener("click",function(){copyText("cmdCopy")})
 
 // Lấy ra số lần hiện tại từ document
 getData(thongtinDB.nameCollection);
@@ -34,15 +39,34 @@ getData(thongtinDB.nameCollection);
 function ganThongTin(soLan) {
     document.getElementById("soLanDisplay").textContent = soLan;
     document.getElementById("username").value = "thisisforbgx" + soLan;
+    let textCMD = 'echo Numpad1:: MsgBox You pressed Numpad 1! > "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
+              'echo Numpad2:: MsgBox You pressed Numpad 2! >> "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
+              'echo Numpad3:: MsgBox You pressed Numpad 3! >> "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
+              'echo Numpad4:: MsgBox You pressed Numpad 4! >> "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
+              'echo Numpad5:: MsgBox You pressed Numpad 5! >> "C:\\Users\\Administrator\\Documents\\hotkeys.txt" && ' +
+              'start notepad "C:\\Users\\Administrator\\Documents\\hotkeys.txt"';
+    document.getElementById("cmdCopy").value = textCMD
+
 }
 
 function showNotification(message) {
-    const notification = document.getElementById('notificationCopy');
+    let notification = document.getElementById('notificationCopy');
     notification.textContent = message;
     notification.style.display = 'block';
     setTimeout(() => {
         notification.style.display = 'none';
     }, 2000);
+}
+
+function copyText(elementId) {
+    let inputElement = document.getElementById(elementId);
+    inputElement.select();
+    inputElement.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(inputElement.value).then(() => {
+        showNotification('Đã sao chép vào clipboard');
+    }).catch(err => {
+        console.error('Sao chép vào clipboard thất bại: ', err);
+    });
 }
 
 async function ThayDoiSoLan(change) {
