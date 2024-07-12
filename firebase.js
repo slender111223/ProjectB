@@ -22,20 +22,22 @@ let thongtinDB = {
     nameDoc: "BGXWeb"
 }
 let soLanHienTai = 0;
-
-
+let numberInputBaoLo = document.getElementById("numberInputBaoLo")
+let amountInputBaoLo = document.getElementById("amountInputBaoLo")
 
 
 
 document.getElementById("tangSo").addEventListener("click", function(){ThayDoiSoLan("Tang");});
 document.getElementById("giamSo").addEventListener("click", function(){ThayDoiSoLan("Giam");});
 document.getElementById("cmdCopyButton").addEventListener("click",function(){copyText("cmdCopy")})
-  setInputFilter(document.getElementById("amountInputBaoLo"), function(value) {
+  setInputFilter(amountInputBaoLo, function(value) {
     return /^\d*\.?\d*$/.test(value); // Allow digits and '.' only, using a RegExp.
   }, "Only digits and '.' are allowed");
 
-document.getElementById("amountInputBaoLo").addEventListener("change",function(){ConvertToVND(this.value,"BaoLo")})
-document.getElementById("numberInputBaoLo").addEventListener("input",changeSoLoDe)
+
+numberInputBaoLo.addEventListener("input",changeSoLoDe)
+amountInputBaoLo.addEventListener("change",tinhTien)
+numberInputBaoLo.addEventListener("change",tinhTien)
  
 
 
@@ -45,8 +47,8 @@ getData(thongtinDB.nameCollection);
 
 ////////////////////////////////////////////////////////// HÀM THỰC THI
 function changeSoLoDe(){
-    let soLo = document.getElementById("numberInputBaoLo").value
-    var characters = soLo.trim().split('');
+    let soLo = numberInputBaoLo.value
+    let characters = soLo.trim().split('');
     let count = 0
     let finalText = ""
     for (let i in characters){
@@ -60,19 +62,44 @@ function changeSoLoDe(){
             }
         }      
     }
-    document.getElementById('numberInputBaoLo').value = finalText
+    numberInputBaoLo.value = finalText
 }
 
 function isDigit(character) {
     return character >= '0' && character <= '9';
 }
 
-function ConvertToVND(numberInput,tenID){
+function ConvertToVND(numberInput){
     let tien = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(numberInput*1000)
+    return tien
 }
 
-function tinhTien(soLo,soTien){
-        
+
+
+
+
+
+
+//can tinh ra so tien
+function tinhTien(){
+    let soLo = numberInputBaoLo.value
+    let count = 0
+    let countSoLo = 0
+    let characters = soLo.trim().split('');
+    for (let i in characters){
+        if(isDigit(characters[i])){
+            count++
+            if(count == 2){
+                countSoLo++
+                if(i == characters.length-1){
+                }
+                count = 0
+            }else if(i == characters.length-1) showNotification("Bạn phải nhập 2 số")
+        }      
+    }  
+    let soTien = amountInputBaoLo.value
+    console.log(soTien)
+    
 }
 
 
