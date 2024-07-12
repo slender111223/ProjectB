@@ -100,3 +100,4 @@ function showNotification(message) {
         notification.style.display = 'none';
     }, 2000);
 }
+

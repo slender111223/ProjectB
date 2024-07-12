@@ -39,7 +39,7 @@ p {
     position: absolute;
     visibility: hidden;
     opacity: 0;
-
+    top: 35%;
     transition: visibility 0s linear 0.33s, opacity 0.33s linear;
 }
 
@@ -322,3 +322,7 @@ body {
     -ms-user-select: none; /* IE/Edge */
     user-select: none; /* Standard syntax */
 }
+
+.input-error{
+    outline: 1px solid red;
+  }
