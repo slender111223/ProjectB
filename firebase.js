@@ -33,7 +33,17 @@ document.getElementById("cmdCopyButton").addEventListener("click",function(){cop
   setInputFilter(amountInputBaoLo, function(value) {
     return /^\d*\.?\d*$/.test(value); // Allow digits and '.' only, using a RegExp.
   }, "Only digits and '.' are allowed");
+document.getElementById("confirmBtn").addEventListener("click",function(){
+    document.getElementById('overlay').style.display = 'flex';
+})
+document.getElementById('yesBtn').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'none';
+    alert('Confirmed!');
+});
 
+document.getElementById('noBtn').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'none';
+});
 
 numberInputBaoLo.addEventListener("input",changeSoLoDe)
 amountInputBaoLo.addEventListener("change",tinhTien)
@@ -98,7 +108,9 @@ function tinhTien(){
         }      
     }  
     let soTien = amountInputBaoLo.value
-    console.log(soTien)
+    let soTienChinh = soTien * 27 * countSoLo
+    let soTienShow = ConvertToVND(soTienChinh)
+    document.getElementById("totalAmountBaoLo").value = soTienShow
     
 }
 
