@@ -328,7 +328,7 @@ body {
   }
 
 
-.overlay {
+  .overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -338,10 +338,11 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 9999; /* Thêm z-index cao để đảm bảo nó nằm trên cùng */
 }
 
 .confirmation-box {
-    background: white;
+    background: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 8px;
     text-align: center;
@@ -353,7 +354,6 @@ body {
     font-size: 16px;
     cursor: pointer;
 }
-
 #confirmBtn {
     padding: 10px 20px;
     font-size: 16px;
