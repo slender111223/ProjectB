@@ -354,8 +354,18 @@ body {
     font-size: 16px;
     cursor: pointer;
 }
+
 #confirmBtn {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.contentLo{
+    padding: 20px;
+}
+
+.TitleLo{
+    font-weight: bold;
+    font-size: 30px;
 }
